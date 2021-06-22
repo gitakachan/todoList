@@ -9,12 +9,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="todolist"></div>
+    <div id="todolist">
+      <h1>{{title}}</h1>
+      <input type="text" v-model="input" @keyup.enter="add(input)"/>
+      <li>
+        <li v-for="todo in todos">
+            <span> {{todo}}</span>
+        </li>
+      </li>
+    </div>
+
+
+
     <script src="vue.js"></script>
     <script>
       let vm = new Vue({
         el: "#todolist",
-        data: {},
+        data: {
+          title: "My Todo List",
+          input:"",
+          todos:["exercise","buy food"]
+        },
+        methods:{
+            add : function(input){
+                this.input = input
+                this.todos.push(this.input)
+                this.input=""
+            }
+        }
       });
     </script>
   </body>
