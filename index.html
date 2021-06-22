@@ -11,15 +11,13 @@
   <body>
     <div id="todolist">
       <h1>{{title}}</h1>
-      <input type="text" v-model="input" @keyup.enter="add(input)"/>
-      <li>
+      <input type="text" v-model="input" @keyup.enter="add(input)" />
+      <ol>
         <li v-for="todo in todos">
-            <span> {{todo}}</span>
+          <span> {{todo}}</span>
         </li>
-      </li>
+      </ol>
     </div>
-
-
 
     <script src="vue.js"></script>
     <script>
@@ -27,16 +25,16 @@
         el: "#todolist",
         data: {
           title: "My Todo List",
-          input:"",
-          todos:["exercise","buy food"]
+          input: "",
+          todos: ["exercise", "buy food"],
         },
-        methods:{
-            add : function(input){
-                this.input = input
-                this.todos.push(this.input)
-                this.input=""
-            }
-        }
+        methods: {
+          add: function (input) {
+            this.input = input;
+            this.todos.push(this.input);
+            this.input = "";
+          },
+        },
       });
     </script>
   </body>
