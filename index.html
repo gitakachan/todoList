@@ -13,8 +13,9 @@
       <h1>{{title}}</h1>
       <input type="text" v-model="input" @keyup.enter="add(input)" />
       <ol>
-        <li v-for="todo in todos">
-          <span> {{todo}}</span>
+        <li v-for="(todo, idx) in todos">
+          <span>{{idx+1}}.</span><span> {{todo}}</span
+          ><button @click="deleteTodo(idx)">x</button>
         </li>
       </ol>
     </div>
@@ -33,6 +34,9 @@
             this.input = input;
             this.todos.push(this.input);
             this.input = "";
+          },
+          deleteTodo: function (idx) {
+            this.todos.splice(idx, 1);
           },
         },
       });
