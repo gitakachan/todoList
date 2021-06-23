@@ -1,9 +1,7 @@
 body {
   min-height: 100vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   position: relative;
+  background-color: #7b8b6f;
 }
 
 #todolist {
@@ -11,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ccc;
+  background-color: #f8ebd8;
   min-height: 400px;
   position: relative;
   padding-bottom: 50px;
@@ -20,9 +18,11 @@ body {
   right: 0;
   margin: auto;
   top: 40px;
+  border-radius: 10px;
 }
 
 h1 {
+  font-size: 25px;
   text-align: center;
   padding: 20px 40px;
 }
@@ -31,20 +31,49 @@ input {
   width: 80%;
   /* 若一個單字過長，超過畫面的寬度，則將單字換行(不切斷單字) */
   word-wrap: break-word;
+
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  padding: 5px;
+  outline: none;
 }
 
 ol {
-  background-color: #fa0;
+  margin-top: 2px;
+  /* background-color: #fa0; */
   width: 80%;
 }
 
 li {
-  position: relative;
   padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+li::after {
+  content: "";
+  width: 100%;
+  display: block;
+  border: 1px solid rgb(129, 37, 37);
+  position: absolute;
+  bottom: 2px;
+  left: 0;
 }
 li button {
+  opacity: 0;
   position: absolute;
   right: 5%;
+  top: 30%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #965454;
+  transition: opacity 0.2s ease-in;
+}
+
+li:hover button {
+  opacity: 1;
 }
 
 footer {
@@ -55,4 +84,8 @@ footer {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+}
+
+.clear {
+  cursor: pointer;
 }
