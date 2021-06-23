@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
 body {
   min-height: 100vh;
   position: relative;
   background-color: #7b8b6f;
+  font-family: "Quicksand", sans-serif;
 }
 
 #todolist {
