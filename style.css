@@ -1,0 +1,58 @@
+body {
+  min-height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: relative;
+}
+
+#todolist {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ccc;
+  min-height: 400px;
+  position: relative;
+  padding-bottom: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 40px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px 40px;
+}
+
+input {
+  width: 80%;
+  /* 若一個單字過長，超過畫面的寬度，則將單字換行(不切斷單字) */
+  word-wrap: break-word;
+}
+
+ol {
+  background-color: #fa0;
+  width: 80%;
+}
+
+li {
+  position: relative;
+  padding: 10px;
+}
+li button {
+  position: absolute;
+  right: 5%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
