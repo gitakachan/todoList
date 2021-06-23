@@ -19,9 +19,14 @@
         </li>
       </ol>
       <footer>
-        <span>{{todos.length}} </span>
-        <span v-show="todos.length<=1">item left</span>
-        <span v-show="todos.length>1">items left</span>
+        <div class="count">
+          <span>{{todos.length}} </span>
+          <span v-show="todos.length<=1">item left</span>
+          <span v-show="todos.length>1">items left</span>
+        </div>
+        <div class="clear">
+          <span @click="clear">clear all</span>
+        </div>
       </footer>
     </div>
 
@@ -42,6 +47,14 @@
           },
           deleteTodo: function (idx) {
             this.todos.splice(idx, 1);
+          },
+          clear: function () {
+            let res = confirm("Delete all todos?");
+            if (res === true) {
+              this.todos = [];
+            } else {
+              return;
+            }
           },
         },
       });
